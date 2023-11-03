@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2 style="text-align:center;background-color:brown;color:white;"> ADD NEW MOVIES :</h2>
+<form method="POST" enctype="multipart/form-data" style="margin-left: 500px;margin-right: 500px;background-color:pink;font-size:120%;">
+    {% csrf_token %}
+<br>NAME:          <input type="text" name="name" placeholder="Enter name of the movie"><br><br>
+    DESCRIPTION:    <input type="text" name="desc" size="30"  placeholder="Enter description of the movie"><br><br>
+    YEAR:            <input type="text" name="year" maxlength="4" placeholder="Enter year of the movie"><br><br>
+    POSTER:          <input type="file" name="img" placeholder="Enter poster of the movie"><br><br>
+    <h5 style="text-align:center;">Click here to <input type="submit"> </h5> <br><br><br>
+    <h5 style="text-align:center;"> <a href="{% url 'Moviesapp:movies' %}" class="btn btn-info btn-block">Go to Home Page</a> </h5>
+
+
+</form>
+
+{% endblock %}
